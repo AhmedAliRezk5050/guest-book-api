@@ -44,10 +44,11 @@ GET  /api/messages/[id]
 
 ### Create message
 POST  /api/messages
-
+###### Bearer Token Authentication
       body {
           "username": "", "content": ""
       }
+
 ##### response
       {
           "newMessageId": ""
@@ -55,6 +56,7 @@ POST  /api/messages
 
 ### Update message
 PUT  /api/messages/[id]
+###### Bearer Token Authentication
 
       body {
           "username": "", "content": ""
@@ -62,6 +64,7 @@ PUT  /api/messages/[id]
 
 #### a reply to a message can be added:
 PUT  /api/messages/[id]
+###### Bearer Token Authentication
 
       body {
            "username": "",
@@ -77,6 +80,7 @@ PUT  /api/messages/[id]
 
 ### Delete message
 DELETE /api/messages/[id]
+###### Bearer Token Authentication
 
       body
       {
@@ -88,3 +92,36 @@ DELETE /api/messages/[id]
       } 
 
 
+### Login
+POST /api/login
+
+      {
+           "username": "",
+           "email": "",
+           "password": ""
+       }
+##### response
+       {
+       "userData": {
+        "id": "",
+        "username": "",
+        "email": "",
+        token
+                     }
+        }          
+        
+        
+
+### Register
+POST /api/register
+
+      {
+           "username": "",
+           "email": "",
+           "password": ""
+       }
+##### response
+       {
+       "userId": "621fc4e688a99a4484909b46"
+       }           
+       
