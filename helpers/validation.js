@@ -13,7 +13,7 @@ const isValidPassword = (password) => {
 };
 const isValidUsername = (username) => {
   return username.match(
-    /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/,
+    /^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/,
   );
 };
 
@@ -33,7 +33,7 @@ const validateUser = (userData) => {
 
   if (!isValidUsername(username)) {
     validationErrors.push(
-      'Please provide a valid username with minimum eight characters. Allowed characters: [ letters numbers . _  ]',
+      'Please provide a valid username with minimum eight characters. Allowed characters: [ letters numbers . _  ].',
     );
   }
   if (!isEmail(email)) {
