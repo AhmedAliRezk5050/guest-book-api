@@ -33,7 +33,7 @@ const validateUser = (userData) => {
 
   if (!isValidUsername(username)) {
     validationErrors.push(
-      'Please provide a valid username with minimum eight characters. Allowed characters: [ letters numbers . _  ].',
+      'Please provide a valid username with minimum eight characters. Allowed characters: [ letters numbers . _  ]. No [ . _ ] at the beginning or at the end or followed by each other',
     );
   }
   if (!isEmail(email)) {
